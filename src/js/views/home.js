@@ -3,6 +3,10 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 
 export class Home extends React.Component {
+    constructor  (props){
+        super(props)
+        console.log(props)
+    }
 	render() {
 		return (
 			<div className="text-center mt-5">

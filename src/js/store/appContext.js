@@ -22,7 +22,7 @@ const injectContext = PassedComponent => {
 		}
 
 		componentDidMount() {
-			fetch("https://assets.breatheco.de/apis/fake/contact/agenda")
+			fetch("https://assets.breatheco.de/apis/fake/contact/agenda/LuisRivera")
 				.then(response => response.json())
 				.then(data => {
 					let { store } = this.state;

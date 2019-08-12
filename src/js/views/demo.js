@@ -18,7 +18,7 @@ export class Demo extends React.Component {
 										key={index}
 										className="list-group-item d-flex justify-content-between"
 										style={{ background: item.background }}>
-										<Link to={"/single/" + index}>
+										<Link to={"/single/" + item.product + "/" + item.sku+ "/" + item.cat}>
 											<span>Link to: {item.title}</span>
 										</Link>
 										<p style={{ color: item.initial }}>
