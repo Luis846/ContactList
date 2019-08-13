@@ -6,18 +6,16 @@ const getState = ({ getStore, setStore }) => {
 		actions: {
 			//(Arrow) Functions that update the Store
 			// Remember to use the scope: scope.state.store & scope.setState()
-			updateContact: (id, name) => {
-				fetch("", {
-					method: "put",
-					body: JSON.stringify({ full_name: name }),
-					headers: { "Content-Type": "application/json" }
+			updateContact: (id, obj) => {
+				fetch("https://assets.breatheco.de/apis/fake/contact/" + id, {
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(obj)
 				}).then(() => {
-					fetch("https://assets.breatheco.de/apis/fake/contact/" + id)
+					fetch("https://assets.breatheco.de/apis/fake/contact/")
 						.then(response => response.json())
 						.then(data => {
-							let { store } = this.state;
-
-							this.setState({ store: { ...store, agenda: data } });
+							setStore({ agenda: data });
 						});
 				});
 			}
